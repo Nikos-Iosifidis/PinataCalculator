@@ -1,0 +1,55 @@
+﻿<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/third-party/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/content/popup.css">
+
+    <script src="/third-party/jquery-3.3.1.min.js"></script>
+    <script src="/third-party/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/third-party/html2canvas.js"></script>
+    <script src="/third-party/Canvas2Image.js"></script>
+    <script src="/scripts/popup/popup.js"></script>
+</head>
+<body>
+    <div id="not-efood" class="hidden text-center">
+        <span>Το extension λειτουργεί μόνο στη σελίδα του e-food!</span>
+        <div class="emoji">
+            &#128542;
+        </div>
+    </div>
+    <div class="container hidden" id="efood">
+        <h1 id="pinata-header" class="text-center">Piñata</h1>
+        <h1 id="pinata-preview-header" class="text-center">Προεπισκόπηση</h1>
+        <div id="table-wraper">
+            <table id="pinata-table" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th class="text-no-wrap text-center">Ποσότητα</th>
+                        <th class="text-no-wrap text-center">Έκπτωση</th>
+                        <th class="text-no-wrap text-center">Έξτρα</th>
+                        <th class="text-no-wrap text-center">Αρχική τιμή</th>
+                        <th class="text-no-wrap text-center">Τελική τιμή</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+                <tfoot>
+                    <tr>
+                        <td>Σύνολο</td>
+                        <td></td>
+                        <td></td>
+                        <td id="total-extras" class="text-no-wrap text-center"></td>
+                        <td id="total" class="text-center"></td>
+                        <td id="total-with-discount" class="text-no-wrap text-center"></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <div id="img-out"></div>
+        <div class="info-container">
+            <span class="info-sign">&#x1F6C8</span>
+            <span class="text-info">Πάτα δεξί κλικ στον πίνακα, και μετά αντιγραφή εικόνας</span>
+        </div>
+    </div>
+</body>
+</html>

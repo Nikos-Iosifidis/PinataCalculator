@@ -1,0 +1,96 @@
+html {
+    height: fit-content;
+}
+
+body {
+    width: 800px;
+    height: fit-content;
+}
+
+#not-efood .emoji {
+    font-size: 50px;
+}
+
+.container {
+    margin-bottom: 30px;
+}
+
+#not-efood {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.info-container {
+    margin-top: 10px;
+}
+
+    .info-container .info-sign {
+        color: #6c7ae0;
+        font-size: xx-large;
+        vertical-align: middle;
+        padding-right: 5px;
+    }
+
+.text-no-wrap {
+    white-space: nowrap;
+}
+
+.product-name {
+    font-weight: 600;
+}
+
+.product-description, .secondary-price {
+    font-size: small;
+    margin-top: 5px;
+}
+
+#table-wraper {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.table-striped > thead > tr {
+    font-family: Lato-Bold;
+    background-color: #6c7ae0;
+    color: white;
+    font-size: 18px;
+}
+
+.table-striped > tbody > tr {
+    color: #808080;
+    font-family: Lato-Regular;
+}
+
+    .table-striped > tbody > tr:nth-child(even) {
+        background-color: #f8f6ff;
+    }
+
+.table-striped > tfoot > tr {
+    font-family: Lato-Regular;
+    background-color: #6c7ae0;
+    color: white;
+}
+
+.table-bordered {
+    border: 2px solid #ddd;
+}
+
+table p {
+    margin: 0;
+}
+
+#pinata-table td {
+    vertical-align: middle;
+}
+
+tfoot {
+    border-top: black solid;
+}
+
+    tfoot .text-muted {
+        color: white;
+    }
+
+.table {
+    margin-bottom: 0;
+}

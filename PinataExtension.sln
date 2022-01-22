@@ -1,0 +1,102 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31912.275
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E897B47C-3AAC-4A0F-9455-A8556BFA2D5E}"
+	ProjectSection(SolutionItems) = preProject
+		ExtensionStoreIcon.png = ExtensionStoreIcon.png
+		Deploy\manifest.json = Deploy\manifest.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "bootstrap", "bootstrap", "{9F1BAC28-11EB-4E75-84CF-A9DCDC95E931}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "css", "css", "{46DB112B-0A9B-485F-B673-B57691AE49F7}"
+	ProjectSection(SolutionItems) = preProject
+		Deploy\third-party\bootstrap\css\bootstrap-theme.css = Deploy\third-party\bootstrap\css\bootstrap-theme.css
+		Deploy\third-party\bootstrap\css\bootstrap-theme.css.map = Deploy\third-party\bootstrap\css\bootstrap-theme.css.map
+		Deploy\third-party\bootstrap\css\bootstrap-theme.min.css = Deploy\third-party\bootstrap\css\bootstrap-theme.min.css
+		Deploy\third-party\bootstrap\css\bootstrap-theme.min.css.map = Deploy\third-party\bootstrap\css\bootstrap-theme.min.css.map
+		Deploy\third-party\bootstrap\css\bootstrap.css = Deploy\third-party\bootstrap\css\bootstrap.css
+		Deploy\third-party\bootstrap\css\bootstrap.css.map = Deploy\third-party\bootstrap\css\bootstrap.css.map
+		Deploy\third-party\bootstrap\css\bootstrap.min.css = Deploy\third-party\bootstrap\css\bootstrap.min.css
+		Deploy\third-party\bootstrap\css\bootstrap.min.css.map = Deploy\third-party\bootstrap\css\bootstrap.min.css.map
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "fonts", "fonts", "{2E9E0332-8BCF-4E08-8C93-186C56DCF809}"
+	ProjectSection(SolutionItems) = preProject
+		Deploy\third-party\bootstrap\fonts\glyphicons-halflings-regular.eot = Deploy\third-party\bootstrap\fonts\glyphicons-halflings-regular.eot
+		Deploy\third-party\bootstrap\fonts\glyphicons-halflings-regular.svg = Deploy\third-party\bootstrap\fonts\glyphicons-halflings-regular.svg
+		Deploy\third-party\bootstrap\fonts\glyphicons-halflings-regular.ttf = Deploy\third-party\bootstrap\fonts\glyphicons-halflings-regular.ttf
+		Deploy\third-party\bootstrap\fonts\glyphicons-halflings-regular.woff = Deploy\third-party\bootstrap\fonts\glyphicons-halflings-regular.woff
+		Deploy\third-party\bootstrap\fonts\glyphicons-halflings-regular.woff2 = Deploy\third-party\bootstrap\fonts\glyphicons-halflings-regular.woff2
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "js", "js", "{C2863473-EC93-4020-9C7E-D3B6E7081D59}"
+	ProjectSection(SolutionItems) = preProject
+		Deploy\third-party\bootstrap\js\bootstrap.js = Deploy\third-party\bootstrap\js\bootstrap.js
+		Deploy\third-party\bootstrap\js\bootstrap.min.js = Deploy\third-party\bootstrap\js\bootstrap.min.js
+		Deploy\third-party\bootstrap\js\npm.js = Deploy\third-party\bootstrap\js\npm.js
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "third-party", "third-party", "{1E910B99-BE0D-4E98-BFDF-351683C0CD72}"
+	ProjectSection(SolutionItems) = preProject
+		Deploy\third-party\Canvas2Image.js = Deploy\third-party\Canvas2Image.js
+		Deploy\third-party\html2canvas.js = Deploy\third-party\html2canvas.js
+		Deploy\third-party\jquery-3.3.1.min.js = Deploy\third-party\jquery-3.3.1.min.js
+		Deploy\third-party\md5.js = Deploy\third-party\md5.js
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{0A9056FD-AC84-42BE-A8DD-27544BA5518D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "content", "content", "{C8104911-6287-4D96-ABB6-9E23106923DD}"
+	ProjectSection(SolutionItems) = preProject
+		Deploy\scripts\content\common.js = Deploy\scripts\content\common.js
+		Deploy\scripts\content\content-delivery.js = Deploy\scripts\content\content-delivery.js
+		Deploy\scripts\content\content-orders.js = Deploy\scripts\content\content-orders.js
+		Deploy\scripts\content\content.js = Deploy\scripts\content\content.js
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "popup", "popup", "{86664156-2360-45AE-B6DE-03CCE90F4B53}"
+	ProjectSection(SolutionItems) = preProject
+		Deploy\scripts\popup\popup.js = Deploy\scripts\popup\popup.js
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "content", "content", "{A1B971A7-0701-4DA0-95C6-36F460B9FA58}"
+	ProjectSection(SolutionItems) = preProject
+		Deploy\content\icon.png = Deploy\content\icon.png
+		Deploy\content\joker-icon.png = Deploy\content\joker-icon.png
+		Deploy\content\popup.css = Deploy\content\popup.css
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "html", "html", "{483D7DC1-ADDA-44D3-9A24-2C4F72F58B07}"
+	ProjectSection(SolutionItems) = preProject
+		Deploy\html\popup.html = Deploy\html\popup.html
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9F1BAC28-11EB-4E75-84CF-A9DCDC95E931} = {1E910B99-BE0D-4E98-BFDF-351683C0CD72}
+		{46DB112B-0A9B-485F-B673-B57691AE49F7} = {9F1BAC28-11EB-4E75-84CF-A9DCDC95E931}
+		{2E9E0332-8BCF-4E08-8C93-186C56DCF809} = {9F1BAC28-11EB-4E75-84CF-A9DCDC95E931}
+		{C2863473-EC93-4020-9C7E-D3B6E7081D59} = {9F1BAC28-11EB-4E75-84CF-A9DCDC95E931}
+		{1E910B99-BE0D-4E98-BFDF-351683C0CD72} = {E897B47C-3AAC-4A0F-9455-A8556BFA2D5E}
+		{0A9056FD-AC84-42BE-A8DD-27544BA5518D} = {E897B47C-3AAC-4A0F-9455-A8556BFA2D5E}
+		{C8104911-6287-4D96-ABB6-9E23106923DD} = {0A9056FD-AC84-42BE-A8DD-27544BA5518D}
+		{86664156-2360-45AE-B6DE-03CCE90F4B53} = {0A9056FD-AC84-42BE-A8DD-27544BA5518D}
+		{A1B971A7-0701-4DA0-95C6-36F460B9FA58} = {E897B47C-3AAC-4A0F-9455-A8556BFA2D5E}
+		{483D7DC1-ADDA-44D3-9A24-2C4F72F58B07} = {E897B47C-3AAC-4A0F-9455-A8556BFA2D5E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {037C7049-D385-4BE0-8D79-A08A448F8965}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 1
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://iosifidisnk.visualstudio.com/
+		SccLocalPath0 = .
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,33 @@
+{
+  "name": "Piñata Calculator",
+  "version": "2.0",
+  "description": "Piñata Calculator for e-food",
+  "permissions": [
+    "tabs",
+    "storage"
+  ],
+  "browser_action": {
+    "default_title": "Piñata",
+    "default_icon": "content/joker-icon.png",
+    "default_popup": "html/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [ "https://www.e-food.gr/delivery/*" ],
+      "js": [ "third-party/jquery-3.3.1.min.js", "scripts/content/common.js", "scripts/content/content-delivery.js" ]
+    },
+    {
+      "matches": [ "https://www.e-food.gr/orders/*" ],
+      "exclude_matches": [ "https://www.e-food.gr/orders/thankyou*" ],
+      "js": [ "third-party/jquery-3.3.1.min.js", "third-party/md5.js", "scripts/content/common.js", "scripts/content/content-orders.js" ]
+    },
+    {
+      "matches": [ "https://www.e-food.gr/*" ],
+      "exclude_matches": [ "https://www.e-food.gr/delivery/*" ],
+      "js": [ "third-party/jquery-3.3.1.min.js", "scripts/content/common.js", "scripts/content/content.js" ],
+      "run_at": "document_start"
+    }
+  ],
+  "manifest_version": 2,
+  "content_security_policy": "script-src 'self'; object-src 'self'"
+}
