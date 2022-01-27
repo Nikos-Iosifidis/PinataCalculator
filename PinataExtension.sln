@@ -41,9 +41,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "js", "js", "{C2863473-EC93-
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "third-party", "third-party", "{1E910B99-BE0D-4E98-BFDF-351683C0CD72}"
 	ProjectSection(SolutionItems) = preProject
-		Deploy\third-party\Canvas2Image.js = Deploy\third-party\Canvas2Image.js
-		Deploy\third-party\html2canvas.js = Deploy\third-party\html2canvas.js
-		Deploy\third-party\jquery-3.3.1.min.js = Deploy\third-party\jquery-3.3.1.min.js
+		Deploy\third-party\html-to-image.js = Deploy\third-party\html-to-image.js
+		Deploy\third-party\html-to-image.js.map = Deploy\third-party\html-to-image.js.map
+		Deploy\third-party\jquery-3.6.0.min.js = Deploy\third-party\jquery-3.6.0.min.js
 		Deploy\third-party\md5.js = Deploy\third-party\md5.js
 	EndProjectSection
 EndProject

@@ -182,12 +182,11 @@ function calculatePrices(data) {
 function replaceWithImage() {
     imageContainer.empty();
     showElement(table);
-    html2canvas($(table), {
-        onrendered: function (canvas) {
+    htmlToImage.toPng(table[0], { quality: 1, backgroundColor: 'rgba(0,0,0,0)' })
+        .then(function (dataUrl) {
             hideElement(table);
-            imageContainer.append(Canvas2Image.convertToPNG(canvas, canvas.width, canvas.height));
-        }
-    });
+            imageContainer.attr('src', dataUrl);
+        });
 }
 
 function showElement(element) {
