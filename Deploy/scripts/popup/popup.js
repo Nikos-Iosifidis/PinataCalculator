@@ -182,7 +182,7 @@ function calculatePrices(data) {
 function replaceWithImage() {
     imageContainer.empty();
     showElement(table);
-    html2canvas($('#table-wrap'), {
+    html2canvas($(table), {
         onrendered: function (canvas) {
             hideElement(table);
             imageContainer.append(Canvas2Image.convertToPNG(canvas, canvas.width, canvas.height));
