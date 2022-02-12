@@ -1,49 +1,85 @@
+chrome.runtime.onMessage.addListener(
+    function (request, sender, sendResponse) {
+        if (request.key === "popup_opened") {
+            parseCartSaveAndSend();
+        }
+    }
+);
+
 function parseCartSaveAndSend() {
-    var cartDiscount = $('#component-cart .cart-header .cart-discount-notice .cart-discount-notice-amount');
-    var cartTotal = $('#component-cart .cart-header .cart-total-price');
-    var cartProductList = $('#component-cart .cart-body .cart-product-list .cart-product-list-item').not('.notice-vat-wrapper');
-    var cartExtras = $('#component-cart .cart-body .cart-delivery-cost-amount, #component-cart .cart-body .cart-discount-notice-amount, #component-cart .cart-body .cart-csr-list .cart-product-list-item-price').not('.notice-vat-wrapper');
+    var cart = JSON.parse(localStorage.getItem(localStorageCartName)) || {}
+    var parsedData = parseCart(cart);
 
-
-    var parsedData = parseCart(cartDiscount, cartTotal, cartExtras, cartProductList);
-    var savedVerification = JSON.parse(localStorage.getItem(localStorageVerificationName)) || {};
-    var newVerification = {
-        productsHash: parsedData.productsHash,
-        discount: parsedData.data.discount,
-        extras: parsedData.data.extras
-    };
-
-    if (newVerification.productsHash !== null && (newVerification.productsHash !== savedVerification.productsHash || savedVerification.discount > newVerification.discount || savedVerification.extras != newVerification.extras)) {
+    if (parsedData && parsedData.data) {
         localStorage.setItem(localStorageDataName, JSON.stringify(parsedData.data));
-        localStorage.setItem(localStorageVerificationName, JSON.stringify(newVerification));
         sendDataToExtension('order_data_efood', parsedData.data);
     }
-};
+}
 
-var cartComponent = document.getElementById('component-cart');
-var config = {
-    attributes: false,
-    childList: true,
-    subtree: true
-};
+function parseCart(cartWrap) {
+    var cart = cartWrap.cart;
+    var discount = cartWrap.discount;
+    var total = 0;
+    var products = [];
+    var extras = 0;
 
-var totalPriceObserver;
-var cartObserver = new MutationObserver(function () {
-    parseCartSaveAndSend();
-
-    var totalPriceElements = document.getElementsByClassName('cart-total-price');
-
-    if (totalPriceElements.length > 0 && !totalPriceObserver) {
-        var config2 = {
-            attributes: true,
-            childList: true,
-            subtree: true,
-            characterData: true
-        };
-        var totalPriceObserver = new MutationObserver(parseCartSaveAndSend);
-        totalPriceObserver.observe(totalPriceElements[0], config2);
-        cartObserver.disconnect();
+    for (var i = 0; i < cart.attributes.length; i++) {
+        if (cart.attributes[i].key.startsWith('tip_')) {
+            extras += cart.attributes[i].value;
+        }
     }
-});
+    extras += cart.delivery_cost;
+    if (cart.csr) {
+        extras += cart.csr.selectedAmount;
+    }
 
-cartObserver.observe(cartComponent, config);
+    total = cart.products_cost + extras;
+
+    var groupedProducts = [];
+    $.each(cart.products, function (i, product) {
+        if (!groupedProducts[product.group_id]) {
+            groupedProducts[product.group_id] = [product];
+        } else {
+            groupedProducts[product.group_id].push(product);
+        }
+    });
+
+    $.each(Object.keys(groupedProducts), function (i, key) {
+        var product = groupedProducts[key][0];
+        if (product.offer_title) {
+            var names = [];
+            $.each(groupedProducts[key], function (i, product) {
+                names.push(product.name);
+            });
+            products.push({
+                name: product.offer_title ,
+                description: names.join(','),
+                price: product.offer_total,
+                quantity: 1
+            });
+        } else {
+            products.push({
+                name: product.name,
+                description: product.description,
+                price: product.price,
+                quantity: product.quantity
+            });
+        }
+    });
+
+    return {
+        data: {
+            products: products,
+            total: total,
+            discount: -discount,
+            extras: extras
+        }
+    };
+};
+
+var s1 = document.createElement('script');
+s1.src = chrome.runtime.getURL('scripts/common.js');
+var s2 = document.createElement('script');
+s2.src = chrome.runtime.getURL('scripts/injectable/inject.js');
+(document.head || document.documentElement).appendChild(s1);
+(document.head || document.documentElement).appendChild(s2);

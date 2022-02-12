@@ -44,10 +44,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "third-party", "third-party"
 		Deploy\third-party\html-to-image.js = Deploy\third-party\html-to-image.js
 		Deploy\third-party\html-to-image.js.map = Deploy\third-party\html-to-image.js.map
 		Deploy\third-party\jquery-3.6.0.min.js = Deploy\third-party\jquery-3.6.0.min.js
-		Deploy\third-party\md5.js = Deploy\third-party\md5.js
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{0A9056FD-AC84-42BE-A8DD-27544BA5518D}"
+	ProjectSection(SolutionItems) = preProject
+		Deploy\scripts\common.js = Deploy\scripts\common.js
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "content", "content", "{C8104911-6287-4D96-ABB6-9E23106923DD}"
 	ProjectSection(SolutionItems) = preProject
@@ -74,6 +76,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "html", "html", "{483D7DC1-A
 		Deploy\html\popup.html = Deploy\html\popup.html
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "injectable", "injectable", "{BBFD5369-3149-4667-980C-060B95A82CB3}"
+	ProjectSection(SolutionItems) = preProject
+		Deploy\scripts\injectable\inject.js = Deploy\scripts\injectable\inject.js
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -89,6 +96,7 @@ Global
 		{86664156-2360-45AE-B6DE-03CCE90F4B53} = {0A9056FD-AC84-42BE-A8DD-27544BA5518D}
 		{A1B971A7-0701-4DA0-95C6-36F460B9FA58} = {E897B47C-3AAC-4A0F-9455-A8556BFA2D5E}
 		{483D7DC1-ADDA-44D3-9A24-2C4F72F58B07} = {E897B47C-3AAC-4A0F-9455-A8556BFA2D5E}
+		{BBFD5369-3149-4667-980C-060B95A82CB3} = {0A9056FD-AC84-42BE-A8DD-27544BA5518D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {037C7049-D385-4BE0-8D79-A08A448F8965}
