@@ -5,7 +5,7 @@
   "permissions": [
     "tabs"
   ],
-  "action": {
+  "browser_action": {
     "default_title": "Piñata",
     "default_icon": "content/joker-icon.png",
     "default_popup": "html/popup.html"
@@ -27,14 +27,7 @@
       "run_at": "document_start"
     }
   ],
-  "web_accessible_resources": [
-    {
-      "resources": [ "scripts/common.js", "scripts/injectable/inject.js" ],
-      "matches": [ "<all_urls>" ]
-    }
-  ],
-  "manifest_version": 3,
-  "content_security_policy": {
-    "extension_pages": "script-src 'self'; object-src 'self'"
-  }
+  "web_accessible_resources": [ "scripts/common.js", "scripts/injectable/inject.js" ],
+  "manifest_version": 2,
+  "content_security_policy": "script-src 'self'; object-src 'self'"
 }
