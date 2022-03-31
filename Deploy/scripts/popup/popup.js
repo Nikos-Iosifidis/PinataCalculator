@@ -154,8 +154,7 @@ function updateTable(data) {
         totalToPay += product.toPay * product.quantity;
         tbody.append(tableRow);
     });
-    //$('#total-extras').html(data.extras + '&#x20AC;');
-    $('#total').html(data.total + '&#x20AC;');
+    $('#total').html(data.total.toFixed(2) + '&#x20AC;');
     var realTotal = data.total + data.discount;
     $('#total-with-discount').html(getTotalPriceToPayInnerElement(realTotal, totalToPay));
 }
@@ -168,7 +167,7 @@ function calculatePrices(data) {
     var totalWithoutExtras = total - totalExtras;
 
     $.each(data.products, function (i, product) {
-        var price = product.price / product.quantity
+        var price = product.price;
         var orderFactor = price / totalWithoutExtras;
         var extras = orderFactor * totalExtras;
 

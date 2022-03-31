@@ -1,6 +1,6 @@
 {
   "name": "Piñata Calculator",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "description": "Piñata Calculator for e-food",
   "permissions": [
     "tabs"
