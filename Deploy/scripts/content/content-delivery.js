@@ -60,7 +60,7 @@ function parseCart(cartDiscount, cartTotal, cartExtras, cartProductList) {
                 products.push({
                     name: obj.find('.cart-product-list-item-name').text(),
                     description: obj.find('.cart-product-list-item-description').text(),
-                    price: parseNumber(price),
+                    price: parseNumber(price) / quantity,
                     quantity: quantity
                 });
             }
