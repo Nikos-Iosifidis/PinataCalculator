@@ -94,3 +94,7 @@ tfoot {
 .table {
     margin-bottom: 0;
 }
+
+#img-out {
+    max-width: 100%;
+}

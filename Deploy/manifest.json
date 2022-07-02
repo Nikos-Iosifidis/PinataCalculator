@@ -1,6 +1,6 @@
 {
   "name": "Piñata Calculator",
-  "version": "2.2.3",
+  "version": "2.3.0",
   "description": "Piñata Calculator for e-food",
   "permissions": [
     "tabs"
@@ -21,13 +21,17 @@
       "js": [ "third-party/jquery-3.6.0.min.js", "scripts/common.js", "scripts/content/common.js", "scripts/content/content-orders.js" ]
     },
     {
+      "matches": [ "https://www.e-food.gr/account/orders/*" ],
+      "js": [ "third-party/jquery-3.6.0.min.js", "scripts/common.js", "scripts/content/common.js", "scripts/content/account-orders.js" ]
+    },
+    {
       "matches": [ "https://www.e-food.gr/*" ],
-      "exclude_matches": [ "https://www.e-food.gr/delivery/*", "https://www.e-food.gr/orders/form*" ],
+      "exclude_matches": [ "https://www.e-food.gr/delivery/*", "https://www.e-food.gr/orders/form*", "https://www.e-food.gr/account/orders/*" ],
       "js": [ "third-party/jquery-3.6.0.min.js", "scripts/common.js", "scripts/content/common.js", "scripts/content/content.js" ],
       "run_at": "document_start"
     }
   ],
-  "web_accessible_resources": [ "scripts/common.js", "scripts/injectable/inject.js" ],
+  "web_accessible_resources": [ "scripts/common.js", "scripts/injectable/cart-export.js", "scripts/injectable/orders-export.js" ],
   "manifest_version": 2,
   "content_security_policy": "script-src 'self'; object-src 'self'"
 }

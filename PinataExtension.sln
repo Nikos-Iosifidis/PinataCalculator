@@ -5,8 +5,12 @@ VisualStudioVersion = 17.0.31912.275
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E897B47C-3AAC-4A0F-9455-A8556BFA2D5E}"
 	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		CODE_OF_CONDUCT.md = CODE_OF_CONDUCT.md
+		CONTRIBUTING.md = CONTRIBUTING.md
 		ExtensionStoreIcon.png = ExtensionStoreIcon.png
-		Deploy\manifest.json = Deploy\manifest.json
+		LICENSE = LICENSE
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "bootstrap", "bootstrap", "{9F1BAC28-11EB-4E75-84CF-A9DCDC95E931}"
@@ -53,6 +57,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{0A90
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "content", "content", "{C8104911-6287-4D96-ABB6-9E23106923DD}"
 	ProjectSection(SolutionItems) = preProject
+		Deploy\scripts\content\account-orders.js = Deploy\scripts\content\account-orders.js
 		Deploy\scripts\content\common.js = Deploy\scripts\content\common.js
 		Deploy\scripts\content\content-delivery.js = Deploy\scripts\content\content-delivery.js
 		Deploy\scripts\content\content-orders.js = Deploy\scripts\content\content-orders.js
@@ -78,7 +83,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "html", "html", "{483D7DC1-A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "injectable", "injectable", "{BBFD5369-3149-4667-980C-060B95A82CB3}"
 	ProjectSection(SolutionItems) = preProject
-		Deploy\scripts\injectable\inject.js = Deploy\scripts\injectable\inject.js
+		Deploy\scripts\injectable\cart-export.js = Deploy\scripts\injectable\cart-export.js
+		Deploy\scripts\injectable\orders-export.js = Deploy\scripts\injectable\orders-export.js
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deploy", "Deploy", "{8A6D588A-6AE9-4035-A475-F54D5D468C2F}"
+	ProjectSection(SolutionItems) = preProject
+		Deploy\manifest.json = Deploy\manifest.json
 	EndProjectSection
 EndProject
 Global
@@ -90,21 +101,15 @@ Global
 		{46DB112B-0A9B-485F-B673-B57691AE49F7} = {9F1BAC28-11EB-4E75-84CF-A9DCDC95E931}
 		{2E9E0332-8BCF-4E08-8C93-186C56DCF809} = {9F1BAC28-11EB-4E75-84CF-A9DCDC95E931}
 		{C2863473-EC93-4020-9C7E-D3B6E7081D59} = {9F1BAC28-11EB-4E75-84CF-A9DCDC95E931}
-		{1E910B99-BE0D-4E98-BFDF-351683C0CD72} = {E897B47C-3AAC-4A0F-9455-A8556BFA2D5E}
-		{0A9056FD-AC84-42BE-A8DD-27544BA5518D} = {E897B47C-3AAC-4A0F-9455-A8556BFA2D5E}
+		{1E910B99-BE0D-4E98-BFDF-351683C0CD72} = {8A6D588A-6AE9-4035-A475-F54D5D468C2F}
+		{0A9056FD-AC84-42BE-A8DD-27544BA5518D} = {8A6D588A-6AE9-4035-A475-F54D5D468C2F}
 		{C8104911-6287-4D96-ABB6-9E23106923DD} = {0A9056FD-AC84-42BE-A8DD-27544BA5518D}
 		{86664156-2360-45AE-B6DE-03CCE90F4B53} = {0A9056FD-AC84-42BE-A8DD-27544BA5518D}
-		{A1B971A7-0701-4DA0-95C6-36F460B9FA58} = {E897B47C-3AAC-4A0F-9455-A8556BFA2D5E}
-		{483D7DC1-ADDA-44D3-9A24-2C4F72F58B07} = {E897B47C-3AAC-4A0F-9455-A8556BFA2D5E}
+		{A1B971A7-0701-4DA0-95C6-36F460B9FA58} = {8A6D588A-6AE9-4035-A475-F54D5D468C2F}
+		{483D7DC1-ADDA-44D3-9A24-2C4F72F58B07} = {8A6D588A-6AE9-4035-A475-F54D5D468C2F}
 		{BBFD5369-3149-4667-980C-060B95A82CB3} = {0A9056FD-AC84-42BE-A8DD-27544BA5518D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {037C7049-D385-4BE0-8D79-A08A448F8965}
-	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 1
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://iosifidisnk.visualstudio.com/
-		SccLocalPath0 = .
 	EndGlobalSection
 EndGlobal
