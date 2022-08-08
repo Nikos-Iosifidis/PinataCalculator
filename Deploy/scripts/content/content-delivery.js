@@ -7,10 +7,10 @@ chrome.runtime.onMessage.addListener(
 );
 
 function parseCartAndSend() {
-    var cartDiscount = $('#component-cart .cart-discount-notice-amount');
+    var cartDiscount = $('#component-cart .cart-charge-notice-amount');
     var cartTotal = $('#component-cart .cart-total-price');
-    var cartProductList = $('#component-cart .cart-body .cart-product-list .cart-product-list-item').not('.notice-vat-wrapper');
-    var cartExtras = $('#component-cart .cart-body .cart-delivery-cost-amount').not('.notice-vat-wrapper');
+    var cartProductList = $('#component-cart .cart-body .cart-product-list .cart-product-list-item');
+    var cartExtras = $('#component-cart .cart-charge-notice').not(':contains("περιβαλλοντικό τέλος")').find('.cart-charge-notice-amount');
 
     var data = parseCart(cartDiscount, cartTotal, cartExtras, cartProductList);
     sendDataToExtension('preview_order_data_efood', data.data);
@@ -23,7 +23,12 @@ function parseCart(cartDiscount, cartTotal, cartExtras, cartProductList) {
     var extras = 0;
 
     if (cartDiscount.length !== 0) {
-        discount = parseNumber(cartDiscount.text());
+        $.each(cartDiscount, function (i, value) {
+            var parsed = parseNumber($(value).text());
+            if (parsed < 0) {
+                discount += parsed;
+            }
+        });
     }
 
     if (cartTotal.length !== 0) {
@@ -31,8 +36,11 @@ function parseCart(cartDiscount, cartTotal, cartExtras, cartProductList) {
     }
 
     if (cartExtras.length !== 0) {
-        $.each(cartExtras, function (i, extra) {
-            extras += parseNumber($(extra).text());
+        $.each(cartExtras, function (i, value) {
+            var parsed = parseNumber($(value).text());
+            if (parsed > 0) {
+                extras += parsed;
+            }
         });
     }
 
