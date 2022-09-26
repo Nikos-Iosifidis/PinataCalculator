@@ -7,7 +7,7 @@ chrome.runtime.onMessage.addListener(
 );
 
 function parseCartAndSend() {
-    var cartDiscount = $('#component-cart .cart-charge-notice-amount');
+    var cartDiscount = $('#component-cart .cart-charge-notice-full-amount');
     var cartTotal = $('#component-cart .cart-total-price');
     var cartProductList = $('#component-cart .cart-body .cart-product-list .cart-product-list-item');
     var cartExtras = $('#component-cart .cart-charge-notice').not(':contains("περιβαλλοντικό τέλος")').find('.cart-charge-notice-amount');
