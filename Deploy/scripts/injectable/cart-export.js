@@ -5,6 +5,8 @@ var saveCart = function () {
         var discount = window.ComponentCart.joker();
         if (discount) {
             discount = discount.getTierDiscount();
+        } else if (cart.coupon_discount) {
+            discount = cart.coupon_discount;
         } else {
             discount = 0;
         }
