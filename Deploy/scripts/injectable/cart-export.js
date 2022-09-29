@@ -2,23 +2,17 @@ var saveCart = function () {
     var cart = window.ComponentCart.cart();
 
     if (cart) {
-        var discount = window.ComponentCart.joker();
-        if (discount) {
-            discount = discount.getTierDiscount();
-        } else if (cart.coupon_discount) {
-            discount = cart.coupon_discount;
-        } else {
-            discount = 0;
-        }
-        var parsedCart = parseCart(cart, discount);
+        var joker = window.ComponentCart.joker();
+        var parsedCart = parseCart(cart, joker);
         localStorage.setItem(localStorageDataName, JSON.stringify(parsedCart));
     }
 };
 
-function parseCart(cart, discount) {
+function parseCart(cart, joker) {
     var total = 0;
     var products = [];
     var extras = 0;
+    var discount = 0;
 
     for (var i = 0; i < cart.attributes.length; i++) {
         if (cart.attributes[i].key.startsWith('tip_')) {
@@ -31,6 +25,15 @@ function parseCart(cart, discount) {
     }
 
     total = cart.products_cost + extras;
+
+    if (joker) {
+        discount = discount.getTierDiscount();
+    } else if (cart.coupon_discount) {
+        discount = cart.coupon_discount;
+        total += discount;
+    } else {
+        discount = 0;
+    }
 
     var groupedProducts = [];
     $.each(cart.products, function (i, product) {
