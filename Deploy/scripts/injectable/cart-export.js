@@ -27,7 +27,7 @@ function parseCart(cart, joker) {
     total = cart.products_cost + extras;
 
     if (joker) {
-        discount = discount.getTierDiscount();
+        discount = joker.getTierDiscount();
     } else if (cart.coupon_discount) {
         discount = cart.coupon_discount;
         total += discount;
