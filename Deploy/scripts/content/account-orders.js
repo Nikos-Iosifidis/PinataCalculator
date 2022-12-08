@@ -32,10 +32,9 @@ function parseOrdersAndSend(id) {
 }
 
 function parseOrder(order) {
-    var discount = order.discount;
-    var total = order.discountedTotal + order.discount;
     var products = [];
     var extras = order.tip + order.deliveryCost;
+    var calculatedTotal = extras;
 
     $.each(order.products, function (i, product) {
         products.push({
@@ -44,13 +43,14 @@ function parseOrder(order) {
             price: product.full_price,
             quantity: product.quantity
         });
+        calculatedTotal += 1.0 * product.full_price * product.quantity;
     });
 
     return {
         data: {
             products: products,
-            total: total,
-            discount: -discount,
+            total: calculatedTotal,
+            discount: order.discountedTotal - calculatedTotal,
             extras: extras
         }
     };
