@@ -1,11 +1,11 @@
 {
   "name": "Piñata Calculator",
-  "version": "2.3.5",
+  "version": "2.4.0",
   "description": "Piñata Calculator for e-food",
   "permissions": [
     "tabs"
   ],
-  "browser_action": {
+  "action": {
     "default_title": "Piñata",
     "default_icon": "content/joker-icon.png",
     "default_popup": "html/popup.html"
@@ -31,7 +31,14 @@
       "run_at": "document_start"
     }
   ],
-  "web_accessible_resources": [ "scripts/common.js", "scripts/injectable/cart-export.js", "scripts/injectable/orders-export.js" ],
-  "manifest_version": 2,
-  "content_security_policy": "script-src 'self'; object-src 'self'"
+  "web_accessible_resources": [
+    {
+      "resources": [ "scripts/common.js", "scripts/injectable/cart-export.js", "scripts/injectable/orders-export.js" ],
+      "matches": [ "<all_urls>" ]
+    }
+  ],
+  "manifest_version": 3,
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
 }
