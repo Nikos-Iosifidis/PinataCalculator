@@ -83,8 +83,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "html", "html", "{483D7DC1-A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "injectable", "injectable", "{BBFD5369-3149-4667-980C-060B95A82CB3}"
 	ProjectSection(SolutionItems) = preProject
-		Deploy\scripts\injectable\cart-export.js = Deploy\scripts\injectable\cart-export.js
 		Deploy\scripts\injectable\orders-export.js = Deploy\scripts\injectable\orders-export.js
+		Deploy\scripts\injectable\shop-info-export.js = Deploy\scripts\injectable\shop-info-export.js
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deploy", "Deploy", "{8A6D588A-6AE9-4035-A475-F54D5D468C2F}"
