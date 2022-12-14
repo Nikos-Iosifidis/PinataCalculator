@@ -1,6 +1,6 @@
 {
   "name": "Piñata Calculator",
-  "version": "2.4.0",
+  "version": "2.4.1",
   "description": "Piñata Calculator for e-food",
   "permissions": [
     "tabs"
@@ -33,7 +33,7 @@
   ],
   "web_accessible_resources": [
     {
-      "resources": [ "scripts/common.js", "scripts/injectable/cart-export.js", "scripts/injectable/orders-export.js" ],
+      "resources": [ "scripts/common.js", "scripts/injectable/shop-info-export.js", "scripts/injectable/orders-export.js" ],
       "matches": [ "<all_urls>" ]
     }
   ],
