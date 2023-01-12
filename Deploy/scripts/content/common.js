@@ -33,6 +33,7 @@ function parseCart(cart) {
         discount = cart.jokerDiscount;
     } else if (cart.coupon.couponDiscount > 0) {
         discount = cart.coupon.couponDiscount;
+        total += discount;
     } else {
         discount = 0;
     }
