@@ -1,6 +1,6 @@
 {
   "name": "Piñata Calculator",
-  "version": "2.4.2",
+  "version": "2.4.3",
   "description": "Piñata Calculator for e-food",
   "permissions": [
     "tabs"
@@ -21,12 +21,20 @@
       "js": [ "third-party/jquery-3.6.0.min.js", "scripts/common.js", "scripts/content/common.js", "scripts/content/content-orders.js" ]
     },
     {
-      "matches": [ "https://www.e-food.gr/account/orders/*" ],
+      "matches": [
+        "https://www.e-food.gr/account/orders/*",
+        "https://www.e-food.gr/orders/thankyou*"
+      ],
       "js": [ "third-party/jquery-3.6.0.min.js", "scripts/common.js", "scripts/content/common.js", "scripts/content/account-orders.js" ]
     },
     {
       "matches": [ "https://www.e-food.gr/*" ],
-      "exclude_matches": [ "https://www.e-food.gr/delivery/*", "https://www.e-food.gr/orders/form*", "https://www.e-food.gr/account/orders/*" ],
+      "exclude_matches": [
+        "https://www.e-food.gr/delivery/*",
+        "https://www.e-food.gr/orders/form*",
+        "https://www.e-food.gr/account/orders/*",
+        "https://www.e-food.gr/orders/thankyou*"
+      ],
       "js": [ "third-party/jquery-3.6.0.min.js", "scripts/common.js", "scripts/content/common.js", "scripts/content/content.js" ],
       "run_at": "document_start"
     }
@@ -40,5 +48,10 @@
   "manifest_version": 3,
   "content_security_policy": {
     "extension_pages": "script-src 'self'; object-src 'self'"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{3d5b05ca-8be7-4428-bd98-137be2328b19}"
+    }
   }
 }

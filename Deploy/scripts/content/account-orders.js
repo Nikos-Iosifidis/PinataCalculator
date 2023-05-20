@@ -6,6 +6,7 @@ chrome.runtime.onMessage.addListener(
 
             var id = currentUrl.replace(regx, '');
             if (id) {
+                id = id.replace('thankyou?order_id=', '');
                 parseOrdersAndSend(id);
             } else {
                 var data = JSON.parse(localStorage.getItem(localStorageDataName));
