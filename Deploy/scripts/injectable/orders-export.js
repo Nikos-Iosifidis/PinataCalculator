@@ -22,7 +22,7 @@
     XHR.send = function (postData) {
         this.addEventListener('load', function () {
             var url = this._url ? this._url.toLowerCase() : this._url;
-            if (url.indexOf("api.e-food.gr/api/v1/user/orders/history") > 0) {
+            if (url.indexOf("api/user/orders/history") > 0) {
                 if (this.responseText) {
                     try {
                         var ordersData = JSON.parse(this.responseText).data;

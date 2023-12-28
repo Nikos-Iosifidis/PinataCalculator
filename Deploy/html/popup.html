@@ -3,6 +3,10 @@
 		<meta charset="UTF-8" />
 		<link
 			rel="stylesheet"
+			crossorigin="anonymous"
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+		<link
+			rel="stylesheet"
 			href="/third-party/bootstrap/css/bootstrap.min.css" />
 		<link
 			rel="stylesheet"
@@ -14,44 +18,73 @@
 		<script src="/scripts/popup/popup.js"></script>
 	</head>
 	<body>
-		<div id="not-efood" class="hidden text-center">
+		<div
+			id="not-efood"
+			class="hidden text-center">
 			<span>Το extension λειτουργεί μόνο στη σελίδα του e-food!</span>
-			<div class="emoji">
-				&#128542;
+			<div>
+				Πάτα
+				<a
+					href="#"
+					id="efood-link"
+					>εδώ</a
+				>
+				για να δεις τις παραγγελίες σου.
 			</div>
 		</div>
-		<div class="container hidden" id="efood">
-			<h1 id="pinata-header" class="text-center">Piñata</h1>
-			<h1 id="pinata-preview-header" class="text-center">Προεπισκόπηση</h1>
-			<div id="table-wraper">
-				<table id="pinata-table" class="table table-striped">
-					<thead>
-						<tr>
-							<th></th>
-							<th class="text-no-wrap text-center">Ποσότητα</th>
-							<th class="text-no-wrap text-center">Έκπτωση</th>
-							<th class="text-no-wrap text-center">Έξτρα</th>
-							<th class="text-no-wrap text-center">Αρχική τιμή</th>
-							<th class="text-no-wrap text-center">Τελική τιμή</th>
-						</tr>
-					</thead>
-					<tbody></tbody>
-					<tfoot>
-						<tr>
-							<td>Σύνολο</td>
-							<td></td>
-							<td></td>
-							<td id="total-extras" class="text-no-wrap text-center"></td>
-							<td id="total" class="text-center"></td>
-							<td id="total-with-discount" class="text-no-wrap text-center"></td>
-						</tr>
-					</tfoot>
-				</table>
-			</div>
-			<img id="img-out" />
-			<div class="info-container">
-				<span class="info-sign">&#x1F6C8</span>
-				<span class="text-info">Πάτα δεξί κλικ στον πίνακα, και μετά αντιγραφή εικόνας</span>
+		<div
+			class="container hidden"
+			id="efood">
+			<div class="relative">
+				<div id="table-wraper">
+					<table
+						id="pinata-table"
+						class="table table-striped">
+						<thead>
+							<tr>
+								<th></th>
+								<th class="text-no-wrap text-center">Ποσότητα</th>
+								<th class="text-no-wrap text-center">Έκπτωση</th>
+								<th class="text-no-wrap text-center">Έξτρα</th>
+								<th class="text-no-wrap text-center">Αρχική τιμή</th>
+								<th class="text-no-wrap text-center">Τελική τιμή</th>
+							</tr>
+						</thead>
+						<tbody></tbody>
+						<tfoot>
+							<tr>
+								<td>Σύνολο</td>
+								<td></td>
+								<td></td>
+								<td
+									id="total-extras"
+									class="text-no-wrap text-center"></td>
+								<td
+									id="total"
+									class="text-center"></td>
+								<td
+									id="total-with-discount"
+									class="text-no-wrap text-center"></td>
+							</tr>
+						</tfoot>
+					</table>
+				</div>
+				<img
+					id="img-out"
+					class="hidden" />
+				<button
+					id="copyImageButton"
+					class="primary copy-btn">
+					<span
+						id="btn-copy"
+						class="material-symbols-rounded"
+						>content_copy</span
+					><span
+						id="btn-done"
+						class="material-symbols-rounded hidden"
+						>done</span
+					>
+				</button>
 			</div>
 		</div>
 	</body>

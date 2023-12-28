@@ -1,100 +1,108 @@
 html {
-    height: fit-content;
+	height: fit-content;
 }
 
 body {
-    width: 800px;
-    height: fit-content;
-}
-
-#not-efood .emoji {
-    font-size: 50px;
+	width: 800px;
+	height: fit-content;
 }
 
 .container {
-    margin-bottom: 30px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	padding: 0 20px;
+}
+
+.relative {
+	position: relative;
 }
 
 #not-efood {
-    margin-top: 30px;
-    margin-bottom: 30px;
+	margin-top: 30px;
+	margin-bottom: 30px;
 }
 
-.info-container {
-    margin-top: 10px;
+button.primary {
+	background: #6c7ae0;
+	border-radius: 50%;
+	color: #ffffff;
+	display: inline-block;
+	text-align: center;
+	font-size: 20px;
+	padding: 5px;
 }
 
-    .info-container .info-sign {
-        color: #6c7ae0;
-        font-size: xx-large;
-        vertical-align: middle;
-        padding-right: 5px;
-    }
+.copy-btn {
+	position: absolute;
+	top: 50%;
+	left: -40px;
+}
 
 .text-no-wrap {
-    white-space: nowrap;
+	white-space: nowrap;
 }
 
 .product-name {
-    font-weight: 600;
+	font-weight: 600;
 }
 
-.product-description, .secondary-price {
-    font-size: small;
-    margin-top: 5px;
+.product-description,
+.secondary-price {
+	font-size: small;
+	margin-top: 5px;
 }
 
 #table-wraper {
-    border-radius: 10px;
-    overflow: hidden;
+	border-radius: 10px;
+	overflow: hidden;
 }
 
 .table-striped > thead > tr {
-    font-family: Lato-Bold;
-    background-color: #6c7ae0;
-    color: white;
-    font-size: 18px;
+	font-family: Lato-Bold;
+	background-color: #6c7ae0;
+	color: white;
+	font-size: 18px;
 }
 
 .table-striped > tbody > tr {
-    color: #808080;
-    font-family: Lato-Regular;
+	color: #808080;
+	font-family: Lato-Regular;
 }
 
-    .table-striped > tbody > tr:nth-child(even) {
-        background-color: #f8f6ff;
-    }
+.table-striped > tbody > tr:nth-child(even) {
+	background-color: #f8f6ff;
+}
 
 .table-striped > tfoot > tr {
-    font-family: Lato-Regular;
-    background-color: #6c7ae0;
-    color: white;
+	font-family: Lato-Regular;
+	background-color: #6c7ae0;
+	color: white;
 }
 
 .table-bordered {
-    border: 2px solid #ddd;
+	border: 2px solid #ddd;
 }
 
 table p {
-    margin: 0;
+	margin: 0;
 }
 
 #pinata-table td {
-    vertical-align: middle;
+	vertical-align: middle;
 }
 
 tfoot {
-    border-top: black solid;
+	border-top: black solid;
 }
 
-    tfoot .text-muted {
-        color: white;
-    }
+tfoot .text-muted {
+	color: white;
+}
 
 .table {
-    margin-bottom: 0;
+	margin-bottom: 0;
 }
 
 #img-out {
-    max-width: 100%;
+	max-width: 100%;
 }
