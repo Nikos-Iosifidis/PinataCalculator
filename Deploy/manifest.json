@@ -1,8 +1,8 @@
 {
 	"name": "Piñata Calculator",
-	"version": "2.5.0",
+	"version": "2.5.1",
 	"description": "Piñata Calculator for e-food",
-	"permissions": ["tabs"],
+	"permissions": ["tabs", "clipboardWrite"],
 	"action": {
 		"default_title": "Piñata",
 		"default_icon": "content/joker-icon.png",
@@ -19,7 +19,7 @@
 			"js": ["third-party/jquery-3.7.1.min.js", "scripts/common.js", "scripts/content/common.js", "scripts/content/content-orders.js"]
 		},
 		{
-			"matches": ["https://www.e-food.gr/account/orders/*", "https://www.e-food.gr/orders/thankyou*"],
+			"matches": ["https://www.e-food.gr/account/orders*", "https://www.e-food.gr/orders/thankyou*"],
 			"js": ["third-party/jquery-3.7.1.min.js", "scripts/common.js", "scripts/content/common.js", "scripts/content/account-orders.js"]
 		},
 		{
@@ -27,7 +27,7 @@
 			"exclude_matches": [
 				"https://www.e-food.gr/delivery/*",
 				"https://www.e-food.gr/orders/form*",
-				"https://www.e-food.gr/account/orders/*",
+				"https://www.e-food.gr/account/orders*",
 				"https://www.e-food.gr/orders/thankyou*"
 			],
 			"js": ["third-party/jquery-3.7.1.min.js", "scripts/common.js", "scripts/content/common.js", "scripts/content/content.js"],

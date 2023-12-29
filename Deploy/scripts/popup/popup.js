@@ -40,30 +40,7 @@ function init() {
 	});
 
 	document.getElementById('copyImageButton').addEventListener('click', function () {
-		createTableImage().then(function () {
-			var image = imageContainer[0];
-			// Create a temporary canvas
-			const canvas = document.createElement('canvas');
-			const ctx = canvas.getContext('2d');
-
-			// Set canvas dimensions to match the image
-			canvas.width = image.naturalWidth;
-			canvas.height = image.naturalHeight;
-
-			// Draw the image onto the canvas
-			ctx.drawImage(image, 0, 0);
-
-			// Convert canvas content to a Blob
-			canvas.toBlob(function (blob) {
-				// Create a ClipboardItem with the Blob
-				const clipboardItem = new ClipboardItem({ 'image/png': blob });
-
-				// Use Clipboard API to copy the image data to the clipboard
-				navigator.clipboard.write([clipboardItem]);
-			}, 'image/png');
-
-			triggerCopiedAnimation();
-		});
+		createTableImage(copyImage);
 	});
 
 	document.getElementById('efood-link').addEventListener('click', function () {
@@ -72,6 +49,52 @@ function init() {
 	});
 }
 $(init);
+
+function createTableImage(onLoadCallback) {
+	imageContainer.empty();
+	return htmlToImage.toPng(table[0], { quality: 1, backgroundColor: 'rgba(0,0,0,0)' }).then(function (dataUrl) {
+		imageContainer.on('load', function () {
+			if (onLoadCallback) {
+				onLoadCallback();
+			}
+		});
+		imageContainer.attr('src', dataUrl);
+	});
+}
+
+function copyImage() {
+	var image = imageContainer[0];
+	// Create a temporary canvas
+	const canvas = document.createElement('canvas');
+	const ctx = canvas.getContext('2d');
+
+	// Set canvas dimensions to match the image
+	canvas.width = image.naturalWidth;
+	canvas.height = image.naturalHeight;
+
+	// Draw the image onto the canvas
+	ctx.drawImage(image, 0, 0);
+
+	copyCanvas(canvas);
+
+	triggerCopiedAnimation();
+}
+
+function copyCanvas(canvas) {
+	canvas.toBlob(function (blob) {
+		if (navigator?.clipboard?.write) {
+			// Create a ClipboardItem with the Blob
+			const clipboardItem = new ClipboardItem({ 'image/png': blob });
+
+			// Use Clipboard API to copy the image data to the clipboard
+			navigator.clipboard.write([clipboardItem]);
+		} else {
+			blob.arrayBuffer().then(function (buffer) {
+				browser.clipboard.setImageData(buffer, 'png');
+			});
+		}
+	}, 'image/png');
+}
 
 function triggerCopiedAnimation() {
 	hideElement(btnCopy);
@@ -222,13 +245,6 @@ function calculatePrices(data) {
 		product.price = price.toFixed(2);
 		product.toPay = Math.ceil((payFactor * (price + extras)).toFixed(2) * 10.0) / 10.0;
 		product.extras = extras.toFixed(2);
-	});
-}
-
-function createTableImage() {
-	imageContainer.empty();
-	return htmlToImage.toPng(table[0], { quality: 1, backgroundColor: 'rgba(0,0,0,0)' }).then(function (dataUrl) {
-		imageContainer.attr('src', dataUrl);
 	});
 }
 
