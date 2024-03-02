@@ -1,12 +1,19 @@
 chrome.runtime.onMessage.addListener(
     function (request, sender, sendResponse) {
         if (request.key === "popup_opened") {
-            var currentUrl = window.location.href;
-            const regx = /.*orders[/]?/i;
+            const params = new Proxy(new URLSearchParams(window.location.search), {
+                get: (searchParams, prop) => searchParams.get(prop),
+            });
+            var id = params.order_id;
 
-            var id = currentUrl.replace(regx, '');
+            if (!id) {
+                var currentUrl = window.location.href;
+                const regx = /.*orders[/]?/i;
+
+                id = currentUrl.replace(regx, '');
+            }
+
             if (id) {
-                id = id.replace('thankyou?order_id=', '');
                 parseOrdersAndSend(id);
             } else {
                 var data = JSON.parse(localStorage.getItem(localStorageDataName));
