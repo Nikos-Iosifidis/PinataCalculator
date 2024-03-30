@@ -33,10 +33,12 @@ function parseOrdersAndSend(id) {
 
             if (parsedData && parsedData.data) {
                 sendDataToExtension('order_data_efood', parsedData.data);
+                return;
             }
             break;
         }
     }
+    sendDataToExtension('order_data_efood', null);
 }
 
 function parseOrder(order) {

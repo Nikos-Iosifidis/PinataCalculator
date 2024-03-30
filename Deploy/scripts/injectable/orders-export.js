@@ -22,7 +22,7 @@
     XHR.send = function (postData) {
         this.addEventListener('load', function () {
             var url = this._url ? this._url.toLowerCase() : this._url;
-            if (url.indexOf("api/user/orders/history") > 0) {
+            if (url.indexOf("user/orders/history") > 0) {
                 if (this.responseText) {
                     try {
                         var ordersData = JSON.parse(this.responseText).data;
@@ -35,7 +35,7 @@
                         } else {
                             var parsedOrder = parseOrder(ordersData);
                             saveMissingOrders([parsedOrder]);
-                        }                     
+                        }
                     }
                     catch (err) {
                         console.log(err);
@@ -43,7 +43,7 @@
                 }
             }
 
-            function parseOrder(order) {               
+            function parseOrder(order) {
                 return {
                     id: order.id,
                     products: order.products,
@@ -59,7 +59,7 @@
                 for (var i = 0; i < orders.length; i++) {
                     if (!existingOrders.filter((o) => { return o.id == orders[i].id }).length) {
                         existingOrders.push(orders[i]);
-                    }                        
+                    }
                 }
                 localStorage.setItem(localStorageOrdersName, JSON.stringify(existingOrders));
             };
