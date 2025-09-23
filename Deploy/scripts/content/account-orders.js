@@ -47,13 +47,15 @@ function parseOrder(order) {
     var calculatedTotal = extras;
 
     $.each(order.products, function (i, product) {
-        products.push({
-            name: product.name,
-            description: product.customisation,
-            price: product.full_price,
-            quantity: product.quantity
-        });
-        calculatedTotal += 1.0 * product.full_price * product.quantity;
+        if (product.full_price > 0) {
+            products.push({
+                name: product.name,
+                description: product.customisation,
+                price: product.full_price,
+                quantity: product.quantity
+            });
+            calculatedTotal += 1.0 * product.full_price * product.quantity;
+        }
     });
 
     return {
