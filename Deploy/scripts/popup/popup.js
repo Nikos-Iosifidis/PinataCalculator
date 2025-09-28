@@ -267,7 +267,7 @@ function calculatePrices(data) {
 
         product.payFactor = payFactor;
         product.price = price.toFixed(2);
-        product.toPay = (payFactor * (price + extras)).toFixed(2);
+        product.toPay = (payFactor * (price + extras)).toFixed(2) * 1.0;
         product.extras = extras.toFixed(2);
     });
 }
@@ -285,4 +285,3 @@ function hideElement(element) {
     }
     element.addClass('hidden');
 }
-
